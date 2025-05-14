@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/presentation/home/widgets/list_category_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -81,7 +82,17 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Container(), // Add your body content here
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            ListCategoryWidget(),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ), // Add your body content here
     );
   }
 }
