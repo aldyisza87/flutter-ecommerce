@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/presentation/home/widgets/banner_widget.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/list_category_widget.dart';
+import 'package:flutter_ecommerce/presentation/home/widgets/list_product_widget.dart';
+import 'package:gap/gap.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,11 +88,18 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListCategoryWidget(),
-            SizedBox(
-              height: 20,
+            Gap(8),
+            ListCategoryWidget(),
+            Gap(16),
+            BannerWidget(),
+            Text(
+              ' List Product',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
+            Expanded(child: ListProductWidget())
           ],
         ),
       ), // Add your body content here
