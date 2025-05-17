@@ -20,8 +20,8 @@ class BannerWidget extends StatelessWidget {
       ).toList(),
       options: CarouselOptions(
         viewportFraction: 1,
-        height: 150,
-        // autoPlay: true,
+        height: 130,
+        autoPlay: true,
       ),
     );
   }

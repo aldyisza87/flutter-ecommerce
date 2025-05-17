@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/common/global_variables.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/banner_widget.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/list_category_widget.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/list_product_widget.dart';
-import 'package:gap/gap.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,11 +14,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double bottomBarWidth = 42;
   double bottomBarBorderWidth = 5;
+  int _selectedIndex = 0;
 
   final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
@@ -86,23 +88,56 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListCategoryWidget(),
-            Gap(8),
-            ListCategoryWidget(),
-            Gap(16),
+            Container(
+                alignment: AlignmentDirectional.center,
+                height: 80,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12)),
+                child: ListCategoryWidget()),
             BannerWidget(),
-            Text(
-              ' List Product',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            ),
             Expanded(child: ListProductWidget())
           ],
         ),
-      ), // Add your body content here
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          selectedItemColor: GlobalVariables.selectedNavBarColor,
+          unselectedItemColor: GlobalVariables.unselectedNavBarColor,
+          backgroundColor: GlobalVariables.backgroundColor,
+          iconSize: 28,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          items: [
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.shopping_bag_rounded),
+                icon: Icon(Icons.shopping_bag_outlined),
+                label: 'Cart'),
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.favorite),
+                icon: Icon(Icons.favorite_outline),
+                label: 'Favorite'),
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.person),
+                icon: Icon(Icons.person_outline),
+                label: 'Profile')
+          ]),
     );
   }
 }

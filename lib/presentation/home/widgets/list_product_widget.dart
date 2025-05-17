@@ -7,57 +7,67 @@ class ListProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      // padding: EdgeInsets.symmetric(horizontal: 16),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
           childAspectRatio: 0.65),
       itemBuilder: (context, index) {
-        return Card(
-          elevation: 2,
-          shadowColor: Color(0xffee4d2d),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+        return Container(
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Hero(
-                tag: 'img6.png',
-                child: SizedBox(
-                  width: 150,
-                  child: Image.asset('assets/images/img6.png'),
+              AspectRatio(
+                aspectRatio: 9 / 10.5,
+                child: Image.asset(
+                  'assets/images/image.png',
+                  fit: BoxFit.cover,
                 ),
               ),
-              Gap(8),
-              Text(
-                'Rp200.000',
-                style: TextStyle(
-                  color: Color(0xffee4d2d),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
-              ),
-              Gap(8),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Text(
-                  'Apple Fuji',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-              Gap(8),
-              Divider(height: 2, color: Colors.grey),
+              Gap(18),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [Text('data'), Text('data')],
-              )
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Apple Fuji',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        'Rp 50.000',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.deepOrange),
+                      ),
+                    ],
+                  ),
+                  Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrangeAccent,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.shopping_bag_outlined,
+                          color: Colors.white,
+                        ),
+                      ))
+                ],
+              ),
             ],
           ),
         );

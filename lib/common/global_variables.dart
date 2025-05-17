@@ -1,20 +1,38 @@
+import 'package:flutter/material.dart';
+
 class GlobalVariables {
   static const List<Map<String, String>> categoryImages = [
     {
-      'title': 'Mobiles',
-      'image': 'assets/images/mobiles.jpeg',
+      'title': 'Elektronik',
+      'image': 'assets/images/elektronik.webp',
     },
     {
-      'title': 'Essentials',
-      'image': 'assets/images/essentials.jpeg',
+      'title': 'Handphone & Aksesoris',
+      'image': 'assets/images/hp.webp',
     },
     {
-      'title': 'Appliances',
-      'image': 'assets/images/appliances.jpeg',
+      'title': 'Laptop & Aksesoris',
+      'image': 'assets/images/laptop.webp',
     },
     {
       'title': 'Books',
       'image': 'assets/images/books.jpeg',
+    },
+    {
+      'title': 'Fashion',
+      'image': 'assets/images/fashion.jpeg',
+    },
+    {
+      'title': 'Books',
+      'image': 'assets/images/books.jpeg',
+    },
+    {
+      'title': 'Fashion',
+      'image': 'assets/images/fashion.jpeg',
+    },
+    {
+      'title': 'Books',
+      'image': 'assets/images/1.webp',
     },
     {
       'title': 'Fashion',
@@ -28,4 +46,8 @@ class GlobalVariables {
     // 'https://storage.googleapis.com/astro-site/home/new-user.webp',
     // 'https://storage.googleapis.com/astro-site/home/24jam.webp',
   ];
+  static const backgroundColor = Colors.white;
+  static const greyBackgroundCOlor = Color(0xffebecee);
+  static const selectedNavBarColor = Color(0xffEE4D2D);
+  static const unselectedNavBarColor = Colors.black87;
 }
