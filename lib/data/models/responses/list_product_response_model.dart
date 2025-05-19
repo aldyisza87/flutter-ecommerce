@@ -1,4 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 
 class ListProductResponseModel {
   List<Product>? data;
@@ -28,6 +31,16 @@ class ListProductResponseModel {
             : List<dynamic>.from(data!.map((x) => x.toJson())),
         "meta": meta?.toJson(),
       };
+
+  @override
+  bool operator ==(covariant ListProductResponseModel other) {
+    if (identical(this, other)) return true;
+
+    return listEquals(other.data, data) && other.meta == meta;
+  }
+
+  @override
+  int get hashCode => data.hashCode ^ meta.hashCode;
 }
 
 class Product {
@@ -54,6 +67,16 @@ class Product {
         "id": id,
         "attributes": attributes?.toJson(),
       };
+
+  @override
+  bool operator ==(covariant Product other) {
+    if (identical(this, other)) return true;
+
+    return other.id == id && other.attributes == attributes;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ attributes.hashCode;
 }
 
 class Attributes {
@@ -117,6 +140,36 @@ class Attributes {
         "updatedAt": updatedAt?.toIso8601String(),
         "publishedAt": publishedAt?.toIso8601String(),
       };
+
+  @override
+  bool operator ==(covariant Attributes other) {
+    if (identical(this, other)) return true;
+
+    return other.name == name &&
+        other.description == description &&
+        other.quantity == quantity &&
+        other.price == price &&
+        other.inStock == inStock &&
+        other.image == image &&
+        other.distributor == distributor &&
+        other.createdAt == createdAt &&
+        other.updatedAt == updatedAt &&
+        other.publishedAt == publishedAt;
+  }
+
+  @override
+  int get hashCode {
+    return name.hashCode ^
+        description.hashCode ^
+        quantity.hashCode ^
+        price.hashCode ^
+        inStock.hashCode ^
+        image.hashCode ^
+        distributor.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode ^
+        publishedAt.hashCode;
+  }
 }
 
 class Meta {
