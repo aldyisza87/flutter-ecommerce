@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce/common/global_variables.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/banner_widget.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/list_category_widget.dart';
 import 'package:flutter_ecommerce/presentation/home/widgets/list_product_widget.dart';
+import 'package:gap/gap.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -92,6 +93,16 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            BannerWidget(),
+            Gap(4),
+            Text(
+              'KATEGORI',
+              style: TextStyle(
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey),
+            ),
+            Gap(2),
             Container(
                 alignment: AlignmentDirectional.center,
                 height: 80,
@@ -100,7 +111,15 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: ListCategoryWidget()),
-            BannerWidget(),
+            Gap(8),
+            Text(
+              'PRODUK',
+              style: TextStyle(
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey),
+            ),
+            Gap(2),
             Expanded(child: ListProductWidget())
           ],
         ),

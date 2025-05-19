@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GlobalVariables {
+  static const baseUrl = 'http://localhost:1337';
   static const List<Map<String, String>> categoryImages = [
     {
       'title': 'Elektronik',
@@ -15,28 +16,16 @@ class GlobalVariables {
       'image': 'assets/images/laptop.webp',
     },
     {
-      'title': 'Books',
-      'image': 'assets/images/books.jpeg',
+      'title': 'Kamera',
+      'image': 'assets/images/kamera.webp',
     },
     {
-      'title': 'Fashion',
-      'image': 'assets/images/fashion.jpeg',
+      'title': 'Pakaian Wanita',
+      'image': 'assets/images/pakaian_wanita.webp',
     },
     {
-      'title': 'Books',
-      'image': 'assets/images/books.jpeg',
-    },
-    {
-      'title': 'Fashion',
-      'image': 'assets/images/fashion.jpeg',
-    },
-    {
-      'title': 'Books',
-      'image': 'assets/images/1.webp',
-    },
-    {
-      'title': 'Fashion',
-      'image': 'assets/images/fashion.jpeg',
+      'title': 'Pakaian Pria',
+      'image': 'assets/images/pakaian_pria.webp',
     },
   ];
 

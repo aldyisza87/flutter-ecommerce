@@ -37,6 +37,10 @@ dependencies:
   carousel_slider: ^5.0.0
   gap: ^3.0.1
   badges: ^3.1.2
+  flutter_bloc: ^9.1.1
+  http: ^1.4.0
+  bloc: ^9.0.0
+  meta: ^1.16.0
 
 dev_dependencies:
   flutter_test:

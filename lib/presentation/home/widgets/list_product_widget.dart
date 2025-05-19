@@ -25,7 +25,7 @@ class ListProductWidget extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 9 / 10.5,
                 child: Image.asset(
-                  'assets/images/image.png',
+                  'assets/images/hp.webp',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -37,14 +37,14 @@ class ListProductWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Apple Fuji',
+                        'Samsung S24',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w500),
                       ),
                       Text(
-                        'Rp 50.000',
+                        'Rp 2.000.000',
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,

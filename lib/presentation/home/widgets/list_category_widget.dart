@@ -7,7 +7,7 @@ class ListCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 65,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemExtent: 80,
@@ -28,9 +28,10 @@ class ListCategoryWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
+                  textAlign: TextAlign.center,
                   GlobalVariables.categoryImages[index]['title']!,
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 8,
                     fontWeight: FontWeight.w400,
                   ),
                 )

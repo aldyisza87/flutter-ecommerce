@@ -1,0 +1,2 @@
+/Users/aldiisza/Development/fic6/flutter_ecommerce/android/app/.cxx/RelWithDebInfo/1t20x672/x86/CMakeFiles/edit_cache.dir
+/Users/aldiisza/Development/fic6/flutter_ecommerce/android/app/.cxx/RelWithDebInfo/1t20x672/x86/CMakeFiles/rebuild_cache.dir
